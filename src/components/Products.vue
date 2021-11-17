@@ -47,7 +47,7 @@ export default {
     },
     addProduct(id) {
       this.$store.commit("addProductToCart", id);
-      alert("Product is added");
+      console.log("Product is added: " + id);
     }
   }
 }

@@ -26,11 +26,6 @@ export default {
     allItemsQuantity() {
       return this.$store.getters.allItemsQuantity;
     }
-    // allItemsQuantity() {
-    //   return this.products.reduce((acc, item) => {
-    //     return acc + item.quantity
-    //   }, 0)
-    // }
   },
   methods: {
     deleteProduct(id) {
