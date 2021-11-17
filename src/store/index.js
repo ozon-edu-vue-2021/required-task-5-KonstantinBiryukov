@@ -8,7 +8,7 @@ const RANDOM_DATA_URL = "https://random-data-api.com"
 
 export default new Vuex.Store({
     state: {
-        products: "",
+        products: [],
         cartProducts: []
     },
     mutations: {
@@ -46,6 +46,10 @@ export default new Vuex.Store({
             randomProductsUrl.searchParams.set("size", "30");
             const random30Products = await fetch(randomProductsUrl.toString());
             const products = await random30Products.json();
+            // add random Price to each product
+            products.forEach(product => {
+                product.price = Math.floor(Math.random() * 1000);
+            });
             commit("setProducts", products);
         }
     },
@@ -53,6 +57,11 @@ export default new Vuex.Store({
         allItemsQuantity(state) {
             return state.cartProducts.reduce((acc, item) => {
                 return acc + item.quantity
+            }, 0)
+        },
+        totalPrice(state) {
+            return state.cartProducts.reduce((acc, item) => {
+                return acc + (item.quantity * item.price);
             }, 0)
         }
     }

@@ -7,8 +7,8 @@
       <div class="card" v-for="product in products" :key="product.id">
         <img :src="getRandomImage()" alt="food" style="width:100%">
         <div class="container">
-          <h4><b>Dish: {{ product.dish }}</b></h4>
-          <p> Measurement: {{ product.measurement }}</p>
+          <h4><b>Name: {{ product.dish }}</b></h4>
+          <p> Price: {{ product.price }}</p>
         </div>
         <button @click="addProduct(product.id)">Add</button>
       </div>
