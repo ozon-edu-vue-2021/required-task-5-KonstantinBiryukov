@@ -62,8 +62,9 @@ export default {
   width: 23%;
   padding: 10px 10px;
   margin: 5px;
-  height: 500px;
+  height: 40%;
 }
+
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
